@@ -482,12 +482,16 @@ robyn_onepagers <- function(InputCollect, OutputCollect, select_model = NULL, qu
         scale_x_abbr()
 
       ## 5. Fitted vs actual
+      
+     
+
       xDecompVecPlotMelted <- temp[[sid]]$plot5data$xDecompVecPlotMelted %>%
         mutate(
           linetype = ifelse(.data$variable == "predicted", "solid", "dotted"),
           variable = stringr::str_to_title(.data$variable),
           ds = as.Date(.data$ds, origin = "1970-01-01")
         )
+      write.csv(xDecompVecPlotMelted, paste0("decompvectmelted", trial, ".csv"), row.names = FALSE)
       p5 <- ggplot(
         xDecompVecPlotMelted,
         aes(x = .data$ds, y = .data$value, color = .data$variable)
