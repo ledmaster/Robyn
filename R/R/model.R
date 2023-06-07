@@ -794,7 +794,11 @@ robyn_mmm <- function(InputCollect,
               solID = paste(trial, lng, i, sep = "_"),
               trial = trial,
               iterNG = lng,
-              iterPar = i
+              iterPar = i,
+              y_train_pred = mod_out$y_train_pred,
+              y_val_pred = mod_out$y_val_pred,
+              y_test_pred = mod_out$y_test_pred,
+              y_pred = mod_out$y_pred
             )
 
             total_common <- ncol(common)
@@ -944,11 +948,7 @@ robyn_mmm <- function(InputCollect,
   return(list(
     resultCollect = resultCollect,
     hyperBoundNG = hyper_bound_list_updated,
-    hyperBoundFixed = hyper_bound_list_fixed,
-    y_train_pred = mod_out$y_train_pred,
-    y_val_pred = mod_out$y_val_pred,
-    y_test_pred = mod_out$y_test_pred,
-    y_pred = mod_out$y_pred
+    hyperBoundFixed = hyper_bound_list_fixed
   ))
 }
 
