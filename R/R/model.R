@@ -796,6 +796,10 @@ robyn_mmm <- function(InputCollect,
               iterNG = lng,
               iterPar = i
             )
+            
+            resultCollect[["y_train_pred"]] <- mod_out$y_train_pred
+            resultCollect[["y_val_pred"]] <- mod_out$y_val_pred
+            resultCollect[["y_test_pred"]] <- mod_out$y_test_pred
 
             total_common <- ncol(common)
             split_common <- which(colnames(common) == "lambda_min_ratio")
@@ -1116,8 +1120,6 @@ model_refit <- function(x_train, y_train, x_val, y_val, x_test, y_test,
     df.int = df.int
   )
   
-  mod_out_df <- as.data.frame(mod_out)
-  write.csv(mod_out_df, file = "mod_out.csv")
 
   return(mod_out)
 }
