@@ -797,11 +797,6 @@ robyn_mmm <- function(InputCollect,
               iterPar = i
             )
             
-            write.csv(mod_out$y_train_pred, paste0("y_train_pred_", trial, ".csv"), row.names = FALSE)
-            write.csv(mod_out$y_val_pred, paste0("y_val_pred_", trial, ".csv"), row.names = FALSE)
-            write.csv(mod_out$y_test_pred, paste0("y_test_pred_", trial, ".csv"), row.names = FALSE)
-
-
             total_common <- ncol(common)
             split_common <- which(colnames(common) == "lambda_min_ratio")
 
