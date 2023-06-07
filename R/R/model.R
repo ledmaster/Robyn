@@ -944,7 +944,11 @@ robyn_mmm <- function(InputCollect,
   return(list(
     resultCollect = resultCollect,
     hyperBoundNG = hyper_bound_list_updated,
-    hyperBoundFixed = hyper_bound_list_fixed
+    hyperBoundFixed = hyper_bound_list_fixed,
+    y_train_pred = mod_out$y_train_pred,
+    y_val_pred = mod_out$y_val_pred,
+    y_test_pred = mod_out$y_test_pred,
+    y_pred = mod_out$y_pred
   ))
 }
 
