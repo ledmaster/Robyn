@@ -784,10 +784,6 @@ robyn_mmm <- function(InputCollect,
               nrmse_train = mod_out$nrmse_train,
               nrmse_val = mod_out$nrmse_val,
               nrmse_test = mod_out$nrmse_test,
-              y_train_pred = mod_out$y_train_pred,
-              y_val_pred = mod_out$y_val_pred,
-              y_test_pred = mod_out$y_test_pred,
-              y_pred = mod_out$y_pred,
               nrmse = nrmse,
               decomp.rssd = decomp.rssd,
               mape = mape,
@@ -1119,6 +1115,9 @@ model_refit <- function(x_train, y_train, x_val, y_val, x_test, y_test,
     mod = mod,
     df.int = df.int
   )
+  
+  mod_out_df <- as.data.frame(mod_out)
+  write.csv(mod_out_df, file = "mod_out.csv")
 
   return(mod_out)
 }
