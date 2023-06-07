@@ -784,6 +784,10 @@ robyn_mmm <- function(InputCollect,
               nrmse_train = mod_out$nrmse_train,
               nrmse_val = mod_out$nrmse_val,
               nrmse_test = mod_out$nrmse_test,
+              y_train_pred = mod_out$y_train_pred,
+              y_val_pred = mod_out$y_val_pred,
+              y_test_pred = mod_out$y_test_pred,
+              y_pred = mod_out$y_pred,
               nrmse = nrmse,
               decomp.rssd = decomp.rssd,
               mape = mape,
@@ -794,11 +798,7 @@ robyn_mmm <- function(InputCollect,
               solID = paste(trial, lng, i, sep = "_"),
               trial = trial,
               iterNG = lng,
-              iterPar = i,
-              y_train_pred = mod_out$y_train_pred,
-              y_val_pred = mod_out$y_val_pred,
-              y_test_pred = mod_out$y_test_pred,
-              y_pred = mod_out$y_pred
+              iterPar = i
             )
 
             total_common <- ncol(common)
