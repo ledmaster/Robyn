@@ -491,7 +491,6 @@ robyn_onepagers <- function(InputCollect, OutputCollect, select_model = NULL, qu
           variable = stringr::str_to_title(.data$variable),
           ds = as.Date(.data$ds, origin = "1970-01-01")
         )
-      write.csv(xDecompVecPlotMelted, paste0("decompvectmelted", sid, ".csv"), row.names = FALSE)
       p5 <- ggplot(
         xDecompVecPlotMelted,
         aes(x = .data$ds, y = .data$value, color = .data$variable)
